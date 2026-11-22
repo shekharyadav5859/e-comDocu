@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-Commerce Backend API Documentation">
+    <title>E-Commerce Backend | Shekhar Yadav</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="#" class="logo">E-<span>Commerce</span></a>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#apis">API Docs</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="tag">JAVA · SPRING BOOT · REST API · MYSQL</span>
+
+        <h1>E-Commerce<br><span>Backend Project</span></h1>
+
+        <p>
+            A backend web application developed using Java and Spring Boot
+            to manage products, shopping carts, customer addresses,
+            orders and payment records.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="https://github.com/shekharyadav5859"
+               target="_blank" class="btn primary">
+                GitHub Repository ↗
+            </a>
+
+            <a href="#apis" class="btn secondary">
+                Explore APIs
+            </a>
+        </div>
+
+        <p class="hero-note">
+            Replace the GitHub link with your E-Commerce repository URL.
+        </p>
+    </div>
+</section>
+
+<main class="container">
+
+<section id="overview">
+    <h2>Project Overview</h2>
+
+    <div class="card">
+        <p>
+            E-Commerce is a backend web application developed using Java
+            and Spring Boot. It provides REST APIs to manage products,
+            shopping carts, customer addresses, orders and payments.
+        </p>
+
+        <p>
+            The project follows a layered architecture to organize
+            application logic, database operations and REST API endpoints.
+            MySQL is used to store application data.
+        </p>
+    </div>
+</section>
+
+<section id="deployment">
+    <h2>Live Deployment</h2>
+
+    <div class="card">
+        <p>The backend application is deployed on Render.</p>
+
+        <p>
+            <strong>Backend URL:</strong>
+            <a href="https://e-com-ijzl.onrender.com"
+               target="_blank">
+                https://e-com-ijzl.onrender.com
+            </a>
+        </p>
+
+        <p><strong>Database:</strong> MySQL</p>
+
+        <p><strong>GitHub:</strong>
+            Add your E-Commerce GitHub repository link here.
+        </p>
+
+        <p>APIs can be tested using Postman or Thunder Client.</p>
+    </div>
+</section>
+
+<section id="technologies">
+    <h2>Technologies Used</h2>
+
+    <div class="card tech-list">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Spring Data JPA</span>
+        <span>REST APIs</span>
+        <span>Maven</span>
+        <span>MySQL</span>
+        <span>Render</span>
+        <span>GitHub</span>
+        <span>Postman</span>
+        <span>Thunder Client</span>
+    </div>
+</section>
+
+<section id="features">
+    <h2>Project Features</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>Product Management</h3>
+            <p>
+                Add, retrieve, update, delete and search products
+                by name, brand, category and price.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Shopping Cart</h3>
+            <p>
+                Add products, increase existing quantity,
+                update quantity and clear the cart.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Address Management</h3>
+            <p>
+                Add, update, retrieve and delete customer addresses.
+                Maintain a default address.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Order Management</h3>
+            <p>
+                Create orders, retrieve user orders,
+                update order status and cancel eligible orders.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Payment Management</h3>
+            <p>
+                Create payment records, retrieve payments
+                and update payment statuses.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Product Search</h3>
+            <p>
+                Search and filter products using name,
+                brand, category and price combinations.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="apis">
+    <h2>API Documentation</h2>
+
+    <div class="card">
+        <p>
+            <strong>Base URL:</strong>
+            <code>https://e-com-ijzl.onrender.com</code>
+        </p>
+
+        <p><strong>Testing Tools:</strong> Postman / Thunder Client</p>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+    <h2>1. Products APIs</h2>
+
+    <div class="card">
+        <p>
+            <strong>Demo:</strong>
+            <a href="https://e-com-ijzl.onrender.com/products"
+               target="_blank">Products API ↗</a>
+        </p>
+
+        <p>Base path: <code>/products</code></p>
+
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr><td>POST</td><td>/products/save</td><td>Add product</td></tr>
+                <tr><td>GET</td><td>/products/</td><td>Get all products</td></tr>
+                <tr><td>GET</td><td>/products/{id}</td><td>Get product by ID</td></tr>
+                <tr><td>PUT</td><td>/products/update/{id}</td><td>Update product</td></tr>
+                <tr><td>DELETE</td><td>/products/delete/{id}</td><td>Delete product</td></tr>
+                <tr><td>GET</td><td>/products/search/name?name={name}</td><td>Search by name</td></tr>
+                <tr><td>GET</td><td>/products/search/brand?brand={brand}</td><td>Search by brand</td></tr>
+                <tr><td>GET</td><td>/products/search/category?category={category}</td><td>Search by category</td></tr>
+                <tr><td>GET</td><td>/products/search/price?min={min}&amp;max={max}</td><td>Search by price</td></tr>
+                <tr><td>GET</td><td>/products/search/name-brand?name={name}&amp;brand={brand}</td><td>Name and brand</td></tr>
+                <tr><td>GET</td><td>/products/search/name-category?name={name}&amp;category={category}</td><td>Name and category</td></tr>
+                <tr><td>GET</td><td>/products/search/brand-category?brand={brand}&amp;category={category}</td><td>Brand and category</td></tr>
+                <tr><td>GET</td><td>/products/search/brand-price?brand={brand}&amp;min={min}&amp;max={max}</td><td>Brand and price</td></tr>
+                <tr><td>GET</td><td>/products/search/name-price?name={name}&amp;min={min}&amp;max={max}</td><td>Name and price</td></tr>
+            </table>
+        </div>
+
+        <h3>Create Product Request</h3>
+
+        <pre><code>{
+  "name": "Samsung Galaxy Phone",
+  "description": "Android smartphone",
+  "price": 25000,
+  "stock": 20,
+  "brand": "Samsung",
+  "imageUrl": "https://example.com/phone.jpg",
+  "category": "Electronics",
+  "active": true
+}</code></pre>
+    </div>
+</section>
+
+<!-- CART -->
+
+<section id="cart">
+    <h2>2. Cart APIs</h2>
+
+    <div class="card">
+        <p>
+            <strong>Demo:</strong>
+            <a href="https://e-com-ijzl.onrender.com/cart"
+               target="_blank">Cart API ↗</a>
+        </p>
+
+        <p>Base path: <code>/cart</code></p>
+
+        <div class="table-wrap">
+            <table>
+                <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+                <tr><td>POST</td><td>/cart/add</td><td>Add product to cart</td></tr>
+                <tr><td>GET</td><td>/cart/user/{userId}</td><td>Get user's cart</td></tr>
+                <tr><td>PUT</td><td>/cart/update/{id}?quantity={quantity}</td><td>Update quantity</td></tr>
+                <tr><td>DELETE</td><td>/cart/remove/{id}</td><td>Remove cart item</td></tr>
+                <tr><td>DELETE</td><td>/cart/clear/{userId}</td><td>Clear cart</td></tr>
+            </table>
+        </div>
+
+        <h3>Add to Cart Request</h3>
+
+        <pre><code>{
+  "userId": 101,
+  "productId": 5,
+  "quantity": 2
+}</code></pre>
+
+        <p>
+            If the same product is added again for the same user,
+            the existing cart quantity is incremented.
+        </p>
+    </div>
+</section>
+
+<!-- ADDRESS -->
+
+<section id="address">
+    <h2>3. Address APIs</h2>
+
+    <div class="card">
+        <p>
+            <strong>Demo:</strong>
+            <a href="https://e-com-ijzl.onrender.com/address"
+               target="_blank">Address API ↗</a>
+        </p>
+
+        <p>Base path: <code>/address</code></p>
+
+        <div class="table-wrap">
+            <table>
+                <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+                <tr><td>POST</td><td>/address/add</td><td>Add address</td></tr>
+                <tr><td>GET</td><td>/address/user/{userId}</td><td>Get user addresses</td></tr>
+                <tr><td>GET</td><td>/address/default/{userId}</td><td>Get default address</td></tr>
+                <tr><td>PUT</td><td>/address/update/{id}/{userId}</td><td>Update address</td></tr>
+                <tr><td>DELETE</td><td>/address/delete/{id}/{userId}</td><td>Delete address</td></tr>
+                <tr><td>DELETE</td><td>/address/delete-all/{userId}</td><td>Delete all addresses</td></tr>
+            </table>
+        </div>
+
+        <h3>Add Address Request</h3>
+
+        <pre><code>{
+  "userId": 101,
+  "fullName": "Customer Name",
+  "phone": "9876543210",
+  "address": "Vijay Nagar",
+  "city": "Indore",
+  "state": "Madhya Pradesh",
+  "country": "India",
+  "pincode": "452010",
+  "addressType": "Home",
+  "defaultAddress": true
+}</code></pre>
+    </div>
+</section>
+
+<!-- ORDERS -->
+
+<section id="orders">
+    <h2>4. Order APIs</h2>
+
+    <div class="card">
+        <p>
+            <strong>Demo:</strong>
+            <a href="https://e-com-ijzl.onrender.com/orders"
+               target="_blank">Orders API ↗</a>
+        </p>
+
+        <p>Base path: <code>/orders</code></p>
+
+        <div class="table-wrap">
+            <table>
+                <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+                <tr><td>POST</td><td>/orders/place</td><td>Place order</td></tr>
+                <tr><td>GET</td><td>/orders/</td><td>Get all orders</td></tr>
+                <tr><td>GET</td><td>/orders/{id}</td><td>Get order by ID</td></tr>
+                <tr><td>GET</td><td>/orders/user/{userId}</td><td>Get user orders</td></tr>
+                <tr><td>GET</td><td>/orders/{id}/user/{userId}</td><td>Get user's specific order</td></tr>
+                <tr><td>PUT</td><td>/orders/status/{id}?status={status}</td><td>Update order status</td></tr>
+                <tr><td>PUT</td><td>/orders/payment/{id}?status={status}</td><td>Update payment status</td></tr>
+                <tr><td>PUT</td><td>/orders/cancel/{id}/{userId}</td><td>Cancel order</td></tr>
+                <tr><td>DELETE</td><td>/orders/delete/{id}</td><td>Delete order</td></tr>
+            </table>
+        </div>
+
+        <h3>Place Order Request</h3>
+
+        <pre><code>{
+  "userId": 101,
+  "addressId": 1,
+  "totalAmount": 15000,
+  "paymentMethod": "COD"
+}</code></pre>
+
+        <p><strong>Order Status:</strong> PLACED, SHIPPED, DELIVERED, CANCELLED</p>
+
+        <p class="notice">
+            Current order creation saves basic order details.
+            It does not automatically convert cart items into OrderItem records.
+        </p>
+    </div>
+</section>
+
+<!-- PAYMENT -->
+
+<section id="payment">
+    <h2>5. Payment APIs</h2>
+
+    <div class="card">
+        <p>
+            <strong>Demo:</strong>
+            <a href="https://e-com-ijzl.onrender.com/payment"
+               target="_blank">Payment API ↗</a>
+        </p>
+
+        <p>Base path: <code>/payment</code></p>
+
+        <div class="table-wrap">
+            <table>
+                <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+                <tr><td>POST</td><td>/payment/create</td><td>Create payment record</td></tr>
+                <tr><td>GET</td><td>/payment/</td><td>Get all payments</td></tr>
+                <tr><td>GET</td><td>/payment/{id}</td><td>Get payment by ID</td></tr>
+                <tr><td>GET</td><td>/payment/user/{userId}</td><td>Get user payments</td></tr>
+                <tr><td>GET</td><td>/payment/order/{orderId}</td><td>Get payment by order</td></tr>
+                <tr><td>GET</td><td>/payment/user/{userId}/order/{orderId}</td><td>Get user-order payment</td></tr>
+                <tr><td>PUT</td><td>/payment/status/{id}?status={status}</td><td>Update payment status</td></tr>
+                <tr><td>GET</td><td>/payment/status?status={status}</td><td>Filter payment status</td></tr>
+            </table>
+        </div>
+
+        <h3>Create Payment Request</h3>
+
+        <pre><code>{
+  "userId": 101,
+  "orderId": 1,
+  "amount": 15000,
+  "paymentMethod": "UPI"
+}</code></pre>
+
+        <p><strong>Payment Status:</strong> PENDING, SUCCESS, FAILED</p>
+
+        <p class="notice">
+            Payment APIs currently manage payment records and statuses.
+            No real payment gateway integration has been implemented yet.
+        </p>
+    </div>
+</section>
+
+<section id="architecture">
+    <h2>Project Architecture</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>Entity</h3>
+            <p>Defines data models mapped to database tables.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Repository</h3>
+            <p>Provides database operations using Spring Data JPA.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Service</h3>
+            <p>Contains business logic and application operations.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Controller</h3>
+            <p>Exposes REST API endpoints.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Configuration</h3>
+            <p>Manages application and database configuration.</p>
+        </div>
+    </div>
+</section>
+
+<section id="future">
+    <h2>Future Improvements</h2>
+
+    <div class="card">
+        <ul>
+            <li>Implement user authentication and authorization.</li>
+            <li>Add role-based access for customers and administrators.</li>
+            <li>Integrate a real payment gateway.</li>
+            <li>Implement OrderItem for multiple products in one order.</li>
+            <li>Connect cart checkout with order creation.</li>
+            <li>Add stock validation and automatic inventory updates.</li>
+            <li>Calculate order totals from actual cart items.</li>
+            <li>Add product reviews.</li>
+            <li>Implement request validation and global exception handling.</li>
+            <li>Add automated unit and integration tests.</li>
+            <li>Publish API documentation using Swagger/OpenAPI.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="notes">
+    <h2>Important Notes</h2>
+
+    <div class="card">
+        <ul>
+            <li>Current APIs use userId, productId and addressId as ID references.</li>
+            <li>Authentication and authorization are not yet implemented.</li>
+            <li>Order creation currently saves basic order details only.</li>
+            <li>Payment status management is not connected to a verified gateway callback.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="author">
+    <h2>Author</h2>
+
+    <div class="card">
+        <h3>Shekhar Yadav</h3>
+        <p>Java Backend Developer</p>
+        <a href="https://github.com/" target="_blank">
+            Add your E-Commerce GitHub repository ↗
+        </a>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© <span id="year"></span> Shekhar Yadav | E-Commerce Backend Project</p>
+</footer>
+
+</body>
+</html>
